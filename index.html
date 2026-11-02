@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAFAR CONFESS ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #160b15, #4b1737, #170c19);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+    color: #ff75b5;
+    font-size: 22px;
+    animation: naik 8s linear infinite;
+    z-index: 0;
+}
+
+@keyframes naik {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 430px;
+    padding: 35px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 40px rgba(255,50,140,0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #ff80b9;
+    letter-spacing: 3px;
+    font-size: 29px;
+}
+
+.subtitle {
+    color: #eac9db;
+    margin: 12px 0 25px;
+    font-size: 14px;
+}
+
+.line {
+    width: 65px;
+    height: 3px;
+    background: #ff70ae;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.message {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #f8e7f0;
+    margin: 20px 0;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.04);
+}
+
+.primary {
+    background: linear-gradient(90deg, #ff4f9a, #ff83bc);
+    color: white;
+}
+
+.yes {
+    background: #ff4f9a;
+    color: white;
+}
+
+.no {
+    background: transparent;
+    border: 1px solid #ff80b9;
+    color: white;
+}
+
+#confession {
+    display: none;
+}
+
+#response {
+    display: none;
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #ffacd0;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #c9a8b9;
+    letter-spacing: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+    <div class="logo">💌</div>
+
+    <h1>JAFAR CONFESS</h1>
+
+    <p class="subtitle">
+        A little message from my heart ❤️
+    </p>
+
+    <div class="line"></div>
+
+    <div id="opening">
+        <p class="message">
+            Hai, ada sesuatu yang sebenarnya
+            sudah lama ingin aku sampaikan.
+            Mungkin ini sederhana, tetapi
+            cukup berarti bagiku.
+            <br><br>
+            Bolehkah aku menyampaikan sesuatu
+            dari hati yang paling dalam?
+        </p>
+
+        <button class="primary" onclick="openMessage()">
+            AKU PUNYA SESUATU ❤️
+        </button>
+    </div>
+
+    <div id="confession">
+
+        <h2 style="color:#ff80b9;">
+            Untuk Kamu...
+        </h2>
+
+        <div class="line"></div>
+
+        <p class="message">
+            Sebenarnya aku tidak tahu harus
+            mulai dari mana.
+            <br><br>
+            Tapi satu hal yang ingin kamu tahu,
+            kehadiranmu membuat hari-hariku
+            terasa lebih menyenangkan.
+            <br><br>
+            Aku mulai menyadari bahwa perasaan
+            ini bukan sekadar kagum biasa.
+            <br><br>
+            Aku suka kamu. Bukan karena
+            kesempurnaanmu, tetapi karena
+            ada sesuatu tentang dirimu
+            yang membuatku nyaman.
+            <br><br>
+            Aku tidak ingin memaksakan
+            perasaan ini kepadamu.
+            Aku hanya ingin jujur tentang
+            apa yang selama ini aku rasakan.
+            <br><br>
+            <b>Would you give me a chance
+            to be someone special in your life?</b> ❤️
+        </p>
+
+        <button class="yes" onclick="answerYes()">
+            AKU TERIMA ❤️
+        </button>
+
+        <button class="no" onclick="answerNo()">
+            MAAf, BELUM BISA
+        </button>
+
+    </div>
+
+    <div id="response"></div>
+
+    <div class="footer">
+        MADE WITH ❤️ BY JAFAR
+    </div>
+
+</div>
+
+<script>
+
+function openMessage() {
+    document.getElementById("opening").style.display = "none";
+    document.getElementById("confession").style.display = "block";
+}
+
+function answerYes() {
+    document.getElementById("confession").style.display = "none";
+
+    let response = document.getElementById("response");
+    response.style.display = "block";
+
+    response.innerHTML = `
+        <h2>❤️ TERIMA KASIH ❤️</h2>
+        <p>
+        Kamu tidak tahu betapa berartinya
+        jawaban itu bagiku.
+        Semoga kita bisa saling mengenal
+        dan menjalani semuanya dengan baik.
+        </p>
+        <h1 style="margin-top:20px;">I LIKE YOU! ❤️</h1>
+    `;
+}
+
+function answerNo() {
+    document.getElementById("confession").style.display = "none";
+
+    let response = document.getElementById("response");
+    response.style.display = "block";
+
+    response.innerHTML = `
+        <h2>TERIMA KASIH SUDAH JUJUR 🤍</h2>
+        <p>
+        Tidak apa-apa, aku menghargai
+        keputusanmu.
+        Terima kasih sudah meluangkan
+        waktu untuk membaca perasaanku.
+        Semoga kita tetap baik-baik saja.
+        </p>
+    `;
+}
+
+// Animasi hati
+const hearts = document.getElementById("hearts");
+
+for(let i = 0; i < 20; i++) {
+    let heart = document.createElement("span");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.animationDuration = (5 + Math.random() * 7) + "s";
+    heart.style.animationDelay = Math.random() * 5 + "s";
+    heart.style.fontSize = (12 + Math.random() * 20) + "px";
+    hearts.appendChild(heart);
+}
+
+</script>
+
+</body>
+</html>
